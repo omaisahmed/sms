@@ -26,7 +26,7 @@
                   <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('subjects.index') }}"> Back</a>
                 </div>
-                <h4 class="page-title mt-3">Add New Class</h4>
+                <h4 class="page-title mt-3">Add New Subject</h4>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -51,7 +51,12 @@
                    @csrf
                         <div class="form-group mb-0">
                             <label class="mb-2 pb-1">Class</label>
-                            <input type="text" name="class" class="form-control" required placeholder="Class"/>
+                            <select name="class">
+                                @foreach($ClassSub as $ClassSubjects)
+                                <option value="{{ $ClassSubjects->class }}">{{ $ClassSubjects->class }}</option>
+                                @endforeach
+                            </select>
+                            <!-- <input type="text" name="class" class="form-control" required placeholder="Class"/> -->
                         </div>
 
                         <div class="form-group mt-3">

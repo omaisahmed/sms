@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subjects;
 use Illuminate\Http\Request;
+use App\Models\Classes;
 
 class SubjectsController extends Controller
 {
@@ -27,7 +28,8 @@ class SubjectsController extends Controller
      */
     public function create()
     {
-        return view('subjects.create');
+        $ClassSubject = Classes::all();
+        return view('subjects.create' , ['ClassSub' => $ClassSubject]);
     }
 
     /**
