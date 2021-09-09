@@ -52,6 +52,8 @@
                                                     <th class="Bold">No</th>
                                                     <th class="Bold">Name</th>
                                                     <th class="Bold">Email</th>
+                                                    <th class="Bold">Password</th>
+                                                    <th class="Bold">Confirm Password</th>
                                                     <th class="Bold">Phone</th>
                                                     <th class="Bold">Gender</th>
                                                     <th class="Bold">DOB</th>
@@ -65,6 +67,8 @@
                                                         <td>{{ ++$i }}</td>
                                                         <td>{{ $teacher->name }}</td>
                                                         <td>{{ $teacher->email}}</td>
+                                                        <td>{{ $teacher->password}}</td>
+                                                        <td>{{ $teacher->confirm_password }}</td>
                                                         <td>{{ $teacher->phone }}</td>
                                                         <td>{{ $teacher->gender }}</td>
                                                         <td>{{ $teacher->dob }}</td>

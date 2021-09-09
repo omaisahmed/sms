@@ -51,15 +51,17 @@
                    @csrf
                         <div class="form-group mb-0">
                             <label class="mb-2 pb-1">Class</label>
-                            <select name="class">
+                            <div>
+                            <select name="class" class="select2 form-control mb-3 custom-select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                                 @foreach($ClassSub as $ClassSubjects)
                                 <option value="{{ $ClassSubjects->class }}">{{ $ClassSubjects->class }}</option>
                                 @endforeach
                             </select>
-                            <!-- <input type="text" name="class" class="form-control" required placeholder="Class"/> -->
+                            </div>
+                        
                         </div>
 
-                        <div class="form-group mt-3">
+                        <div class="form-group mt-2">
                             <label class="mb-2 pb-1">Subject</label>
                             <input type="text" name="subject" class="form-control" required placeholder="Subject"/>
                         </div>

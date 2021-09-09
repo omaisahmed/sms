@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Models\Teachers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TeachersController extends Controller
 {
@@ -43,6 +44,8 @@ class TeachersController extends Controller
         $request->validate([
             'name'=> 'required',
             'email'=> 'required',
+            // 'password'  =>  'required|min:8|confirmed',
+            // 'confirm_password'  =>  'required|min:8|confirmed',
             'phone'=> 'required',
             'gender'=> 'required',
             'dob'=> 'required',
@@ -50,7 +53,29 @@ class TeachersController extends Controller
 
         ]);
 
+        // Teachers::where('id', $teacher->id)
+        // ->insert([
+        //     'name' => $request->input('name'),
+        //     'email' => $request->input('email'),
+        //     'password' => $request->input('password'),
+        //     'confirm_password' => $request->input('confirm_password'),
+        //     'phone' => $request->input('phone'),
+        //     'gender' => $request->input('gender'),
+        //     'dob' => $request->input('dob'),
+        //     'address' => $request->input('address'),
+            
+        // ]);
+ 
         Teachers::create($request->all());
+    
+    //     $password = $request -> password; // password is form field
+    //    $hashed = Hash::make($password);
+
+        // $request->teachers()->fill([
+        //     'password' => Hash::make($request->newPassword)
+        // ])->save();
+        // $password = request('password'); // get the value of password field
+        // $hashed = Hash::make($password); // encrypt the password
         return redirect()->route('teachers.index')->with('success','Teacher Added Successfully!');
 
     }
@@ -90,6 +115,8 @@ class TeachersController extends Controller
         $request->validate([
             'name'=> 'required',
             'email'=> 'required',
+            // 'password'  =>  'required|min:8|confirmed',
+            // 'confirmPassword'  =>  'required|min:8|confirmed',
             'phone'=> 'required',
             'gender'=> 'required',
             'dob'=> 'required',
@@ -101,6 +128,8 @@ class TeachersController extends Controller
         ->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'password' => $request->input('password'),
+            'confirm_password' => $request->input('confirm_password'),
             'phone' => $request->input('phone'),
             'gender' => $request->input('gender'),
             'dob' => $request->input('dob'),

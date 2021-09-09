@@ -65,6 +65,24 @@
                             </div>
                         </div>
 
+                        <div class="form-group mb-0">
+                            <label class="my-2 py-1">Password</label>
+                            <div>
+                                <input type="password" class="form-control" name="password" value="{{ $teacher->password }}"  required
+                                        parsley-type="password" placeholder="Enter a valid Password"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="my-2 py-1">Confirm Password</label>
+                            <div>
+                                <input type="password" class="form-control" name="confirm_password" value="{{ $teacher->confirm_password }}"  required
+                                        parsley-type="password" placeholder="Confirm Your Password"/>
+                            </div>
+                        </div>
+
+                       
+
                        <div class="form-group mb-0">
                             <label class="my-2 py-1">Phone</label>
                             <input type="text" name="phone" value="{{ $teacher->phone }}" class="form-control" required placeholder="Phone"/>

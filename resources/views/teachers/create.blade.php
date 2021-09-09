@@ -65,6 +65,22 @@
                         </div>
 
                         <div class="form-group mb-0">
+                            <label class="my-2 py-1">Password</label>
+                            <div>
+                                <input type="password" class="form-control" name="password"  required
+                                        parsley-type="password" placeholder="Enter a valid Password"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label class="my-2 py-1">Confirm Password</label>
+                            <div>
+                                <input type="password" class="form-control" name="confirm_password"  required
+                                        parsley-type="password" placeholder="Confirm Your Password"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-0">
                             <label class="my-2 py-1">Phone</label>
                             <input type="text" name="phone" class="form-control" required placeholder="Phone"/>
                         </div>
@@ -74,11 +90,10 @@
                         <div class="form-group mb-0">
                             <label class="my-2 py-1">Gender</label>
                             <div>
-                            <select name="gender" class="select2 form-control mb-3 custom-select select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                                               
+                            <select name="gender" class="select2 form-control mb-3 custom-select select2-hidden-accessible" tabindex="-1" aria-hidden="true">             
                                                 <option name="male">Male</option>
                                                 <option name="female">Female</option>                   
-                                            </select>
+                            </select>
                             </div>
                         </div>
 
